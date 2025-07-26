@@ -54,10 +54,32 @@
 
 
   
+  
+  <div class="site-header-image">
+    <img id="originBg" width="100%" alt="Hike News" src="">
+  </div>
+
+  <div id="header-blur" class="site-header-image blur" style="position: absolute; top:0; height: 207px; min-height: 207px; min-width: 100%;">
+    <img id="blurBg" width="100%" style="top: 96%" alt="Hike News" src="">
+  </div>
+
+  <script>
+        var imgUrls = "css/images/pose01.jpg,https://source.unsplash.com/collection/954550/1920x1080,https://source.unsplash.com/collection/954550/1920x1081".split(",");
+        var random = Math.floor((Math.random() * imgUrls.length ));
+        if (imgUrls[random].startsWith('http') || imgUrls[random].indexOf('://') >= 0) {
+          document.getElementById("originBg").src=imgUrls[random];
+          document.getElementById("blurBg").src=imgUrls[random];
+        } else {
+          document.getElementById("originBg").src='/davidchene/' + imgUrls[random];
+          document.getElementById("blurBg").src='/davidchene/' + imgUrls[random];
+        }
+    </script>
+
+
 
 
 <header id="allheader" class="site-header" role="banner" 
-   >
+   style="width: 100%; position: absolute; top:0; background: rgba(255,255,255,.8);"  >
   <div class="clearfix container">
       <div class="site-branding">
 
@@ -130,7 +152,11 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h1 id="Cocos小游戏发布到web教程，看这一篇就够了！"><a href="#Cocos小游戏发布到web教程，看这一篇就够了！" class="headerlink" title="Cocos小游戏发布到web教程，看这一篇就够了！"></a>Cocos小游戏发布到web教程，看这一篇就够了！</h1><p><img src="/davidchene/../../../../Typora/picture/image-20250726233040175.png" alt="image-20250726233040175"></p>
+<h2 id="构建发布"><a href="#构建发布" class="headerlink" title="构建发布"></a>构建发布</h2><p>构建web桌面端，选择适合宽度和高度，点击开始构建</p>
+<h2 id="建立仓库"><a href="#建立仓库" class="headerlink" title="建立仓库"></a>建立仓库</h2><p>打开构建的web桌面端项目文件夹，将文件夹里面所有内容git到新建的仓库，把该仓库的Pages打开</p>
+<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><p>如果想把小游戏放在其他网站上，用ifame嵌入</p>
+
       
     </div>
     <footer class="entry-meta entry-footer">
@@ -413,6 +439,9 @@
 
 
     <!-- headerblur min height -->
+    
+      var headerblur = document.getElementById("header-blur");
+      headerblur.style.minHeight = window.getComputedStyle(document.getElementById("allheader"), null).height;
     
     
 </script>
