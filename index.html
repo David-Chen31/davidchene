@@ -54,32 +54,10 @@
 
 
   
-  
-  <div class="site-header-image">
-    <img id="originBg" width="100%" alt="Hike News" src="">
-  </div>
-
-  <div id="header-blur" class="site-header-image blur" style="position: absolute; top:0; height: 207px; min-height: 207px; min-width: 100%;">
-    <img id="blurBg" width="100%" style="top: 96%" alt="Hike News" src="">
-  </div>
-
-  <script>
-        var imgUrls = "css/images/pose01.jpg,https://source.unsplash.com/collection/954550/1920x1080,https://source.unsplash.com/collection/954550/1920x1081".split(",");
-        var random = Math.floor((Math.random() * imgUrls.length ));
-        if (imgUrls[random].startsWith('http') || imgUrls[random].indexOf('://') >= 0) {
-          document.getElementById("originBg").src=imgUrls[random];
-          document.getElementById("blurBg").src=imgUrls[random];
-        } else {
-          document.getElementById("originBg").src='/davidchene/' + imgUrls[random];
-          document.getElementById("blurBg").src='/davidchene/' + imgUrls[random];
-        }
-    </script>
-
-
 
 
 <header id="allheader" class="site-header" role="banner" 
-   style="width: 100%; position: absolute; top:0; background: rgba(255,255,255,.8);"  >
+   >
   <div class="clearfix container">
       <div class="site-branding">
 
@@ -123,6 +101,72 @@
       <div id="content" class="outer">
         
           <section id="main">
+  
+    <article id="post-一篇搞定：Hexo博客快速插入图片"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/davidchene/2025/07/28/%E4%B8%80%E7%AF%87%E6%90%9E%E5%AE%9A%EF%BC%9AHexo%E5%8D%9A%E5%AE%A2%E5%BF%AB%E9%80%9F%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/">一篇搞定：Hexo博客快速插入图片</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/davidchene/2025/07/28/%E4%B8%80%E7%AF%87%E6%90%9E%E5%AE%9A%EF%BC%9AHexo%E5%8D%9A%E5%AE%A2%E5%BF%AB%E9%80%9F%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/" class="article-date">
+	  <time datetime="2025-07-28T02:47:04.000Z" itemprop="datePublished">七月 28, 2025</time>
+	</a>
+
+      
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/davidchene/categories/%E5%89%8D%E7%AB%AF/">前端</a>
+ 
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="一篇搞定：Hexo博客快速插入图片"><a href="#一篇搞定：Hexo博客快速插入图片" class="headerlink" title="一篇搞定：Hexo博客快速插入图片"></a>一篇搞定：Hexo博客快速插入图片</h1><h2 id="下载插件"><a href="#下载插件" class="headerlink" title="下载插件"></a>下载插件</h2><p><code>npm install hexo-renderer-marked</code>命令直接安装</p>
+<p>在<code>config.yaml</code>中更改配置如下：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">post_asset_folder:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">marked:</span></span><br><span class="line">  <span class="attr">prependRoot:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">postAsset:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="修改Typora配置"><a href="#修改Typora配置" class="headerlink" title="修改Typora配置"></a>修改Typora配置</h2><p>传统方法是先将图片保存到文章资源文件夹中，再从文章资源文件夹中引用图片。但一张一张保存会很麻烦，所以我们利用Typora的粘贴后自动下载功能，简化操作</p>
+<p>配置下载路径，填入<code>./$&#123;filename&#125;</code></p>
+<p><img src="/davidchene/2025/07/26/5min%E9%80%9F%E9%80%9A%EF%BC%9A%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%E5%85%A5%E5%9B%BE%E7%89%87/image-20250728105537607.png" alt="image-20250728105537607"></p>
+<p>这时图片会保存在md文章同目录下的，以该文章名命名的文件夹</p>
+<h2 id="格式化图片名"><a href="#格式化图片名" class="headerlink" title="格式化图片名"></a>格式化图片名</h2><p>配置好后，当我们把图片粘贴过去时，会发现图片路径是：文章名&#x2F;image.png</p>
+<p>此时更新博客系统，它是找不到图片的，需要删去文章名，仅保留image.png。（删除后本地打开md文件后，图片是无法正常显示的，放心，该问题将于下一步解决）</p>
+<p>快速删除方法：按下Ctrl+F，将 文章名&#x2F; 替换为空，点击 <em>全部</em> ，即可完成</p>
+<p><img src="/davidchene/2025/07/26/5min%E9%80%9F%E9%80%9A%EF%BC%9A%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%E5%85%A5%E5%9B%BE%E7%89%87/image-20250728110152768.png" alt="image-20250728110152768"></p>
+<h2 id="设置图片根目录"><a href="#设置图片根目录" class="headerlink" title="设置图片根目录"></a>设置图片根目录</h2><p>此时更新博客系统，能看到图片正常显示了出来，但本地md文件却因为改路径而无法正常显示，影响体验和编辑。下面是修改方法</p>
+<p><img src="/davidchene/2025/07/26/5min%E9%80%9F%E9%80%9A%EF%BC%9A%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%E5%85%A5%E5%9B%BE%E7%89%87/v2-8d28ac51aedad913907c45b4907d325f_1440w.jpg" alt="img"></p>
+<p>点击<em>格式</em>–<em>图像</em>–<em>设置图像根目录</em>，选择保存图片的以文章名命名的文件夹，稍稍等待一会或保存重启Typora就能完美展示出来啦</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/265077468">(69 封私信 &#x2F; 81 条消息) hexo博客如何插入图片 - 知乎</a></p>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/davidchene/categories/%E5%89%8D%E7%AB%AF/">前端</a>
+
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/davidchene/tags/%E5%8D%9A%E5%AE%A2/" rel="tag">博客</a></li></ul>
+
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
   
     <article id="post-5min速通：个人博客搭建"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
@@ -318,7 +362,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="开门大吉"><a href="#开门大吉" class="headerlink" title="开门大吉"></a>开门大吉</h1><p>总而言之，言而总之，今日，骄阳似火，大卫·陈的Blog开张啦！！！😊</p>
-<p><img src="/davidchene/hello-world/pexels-photo-620337.jpeg" alt="img"></p>
+<p><img src="/davidchene/2025/07/26/hello-world/pexels-photo-620337.jpeg" alt="img"></p>
 
       
     </div>
@@ -442,6 +486,18 @@
               <div class="widget-entry-summary" style="margin: 0;">
             
 
+              <h6 style="margin: 0;"><a href="/davidchene/2025/07/28/%E4%B8%80%E7%AF%87%E6%90%9E%E5%AE%9A%EF%BC%9AHexo%E5%8D%9A%E5%AE%A2%E5%BF%AB%E9%80%9F%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/">一篇搞定：Hexo博客快速插入图片</a></h6>
+              <span>七月 28, 2025</span>
+            </div>
+
+          </li>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
               <h6 style="margin: 0;"><a href="/davidchene/2025/07/26/5min%E9%80%9F%E9%80%9A%EF%BC%9A%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">5min速通：个人博客搭建</a></h6>
               <span>七月 26, 2025</span>
             </div>
@@ -481,7 +537,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/davidchene/categories/%E6%B8%B8%E6%88%8F%E5%88%B6%E4%BD%9C/">游戏制作</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/davidchene/categories/%E5%89%8D%E7%AB%AF/">前端</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/davidchene/categories/%E6%B8%B8%E6%88%8F%E5%88%B6%E4%BD%9C/">游戏制作</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -491,7 +547,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/davidchene/tags/cocos/" rel="tag">cocos</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/davidchene/tags/cocos/" rel="tag">cocos</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/davidchene/tags/%E5%8D%9A%E5%AE%A2/" rel="tag">博客</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -501,7 +557,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/davidchene/tags/cocos/" style="font-size: 10px;">cocos</a>
+      <a href="/davidchene/tags/cocos/" style="font-size: 10px;">cocos</a> <a href="/davidchene/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 10px;">博客</a>
     </div>
   </div>
 
@@ -511,7 +567,7 @@
     <h3 class="widget-title">归档</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/davidchene/archives/2025/07/">七月 2025</a><span class="archive-list-count">3</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/davidchene/archives/2025/07/">七月 2025</a><span class="archive-list-count">4</span></li></ul>
     </div>
   </div>
 
@@ -566,9 +622,6 @@
 
 
     <!-- headerblur min height -->
-    
-      var headerblur = document.getElementById("header-blur");
-      headerblur.style.minHeight = window.getComputedStyle(document.getElementById("allheader"), null).height;
     
     
 </script>
