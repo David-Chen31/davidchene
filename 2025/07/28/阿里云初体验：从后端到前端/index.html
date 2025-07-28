@@ -31,7 +31,7 @@
 <meta property="og:image" content="https://david-chen31.github.io/davidchene/2025/07/26/5min%E9%80%9F%E9%80%9A%EF%BC%9A%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/image-20250728164301869.png">
 <meta property="og:image" content="https://david-chen31.github.io/davidchene/2025/07/26/5min%E9%80%9F%E9%80%9A%EF%BC%9A%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/image-20250728163251857.png">
 <meta property="article:published_time" content="2025-07-28T03:30:35.000Z">
-<meta property="article:modified_time" content="2025-07-28T08:44:31.343Z">
+<meta property="article:modified_time" content="2025-07-28T08:51:42.150Z">
 <meta property="article:author" content="David Chen">
 <meta property="article:tag" content="云部署">
 <meta property="article:tag" content="函数计算">
@@ -156,9 +156,7 @@
       
         <h1 id="阿里云初体验：从后端到前端"><a href="#阿里云初体验：从后端到前端" class="headerlink" title="阿里云初体验：从后端到前端"></a>阿里云初体验：从后端到前端</h1><h2 id="项目缘由"><a href="#项目缘由" class="headerlink" title="项目缘由"></a>项目缘由</h2><p>​	最近天挺热，毫不耽误队长安排给我一个<em>用碱基序列查询Part编号及其信息的检索功能</em>任务。这任务看起来很吓人，数据方面可能要用python爬取，上线需要购买域名、云数据库，起初，我准备平静地接受死亡，但在沈阳旅馆单人间的一个晚上，我居然找到了官方提供的xml格式数据（它居然真的直接给你数据库结构和数据），任务难度直降至原来的50%！！</p>
 <p>​	前天队长来催，遂熬夜搞定。用阿里云产品完成比赛项目，不夸张的说完全是大炮打蚊子，主要我第一次使用阿里云大炮，潜心研究两天才搞懂大炮按钮在哪。炮弹轰出那一刻，嗯，蛮有成就感的呢~</p>
-<p>​	文章目录如下，其中有很多需要注意的点，稍有不慎就会bug连篇。</p>
-<pre><code>[TOC]
-</code></pre>
+<p>​	其中有很多需要注意的点，稍有不慎就会bug连篇。</p>
 <h2 id="后端数据库搭建与导入"><a href="#后端数据库搭建与导入" class="headerlink" title="后端数据库搭建与导入"></a>后端数据库搭建与导入</h2><p>数据库方面我选择了阿里云关系型数据库RDS，数据库类型是MySQL 8.0。</p>
 <p>第一次使用的用户可以选择免费试用，试用时长为1个月，完全足够小型测试，试用完成后如果不想续费购买，一定记得在<em>我的试用</em>中释放资源</p>
 <p>下面将展示如何把本地sql数据文件导入到云数据库中：</p>
