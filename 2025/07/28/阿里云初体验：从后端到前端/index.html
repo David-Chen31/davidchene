@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>阿里云初体验：从后端到前端 | DavidChenのBlog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="keywords" content="云部署函数计算数据库" />
+  
+  
+  
+  
+  <meta name="description" content="阿里云初体验：从后端到前端项目缘由​	最近天挺热，毫不耽误队长安排给我一个用碱基序列查询Part编号及其信息的检索功能任务。这任务看起来很吓人，数据方面可能要用python爬取，上线需要购买域名、云数据库，起初，我准备平静地接受死亡，但在沈阳旅馆单人间的一个晚上，我居然找到了官方提供的xml格式数据（它居然真的直接给你数据库结构和数据），任务难度直降至原来的50%！！ ​	前天队长来催，遂熬夜搞定">
+<meta property="og:type" content="article">
+<meta property="og:title" content="阿里云初体验：从后端到前端">
+<meta property="og:url" content="https://david-chen31.github.io/2025/07/28/%E9%98%BF%E9%87%8C%E4%BA%91%E5%88%9D%E4%BD%93%E9%AA%8C%EF%BC%9A%E4%BB%8E%E5%90%8E%E7%AB%AF%E5%88%B0%E5%89%8D%E7%AB%AF/index.html">
+<meta property="og:site_name" content="DavidChenのBlog">
+<meta property="og:description" content="阿里云初体验：从后端到前端项目缘由​	最近天挺热，毫不耽误队长安排给我一个用碱基序列查询Part编号及其信息的检索功能任务。这任务看起来很吓人，数据方面可能要用python爬取，上线需要购买域名、云数据库，起初，我准备平静地接受死亡，但在沈阳旅馆单人间的一个晚上，我居然找到了官方提供的xml格式数据（它居然真的直接给你数据库结构和数据），任务难度直降至原来的50%！！ ​	前天队长来催，遂熬夜搞定">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://david-chen31.github.io/davidchene/2025/07/26/5min%E9%80%9F%E9%80%9A%EF%BC%9A%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/image-20250728155646125.png">
+<meta property="og:image" content="https://david-chen31.github.io/davidchene/2025/07/26/5min%E9%80%9F%E9%80%9A%EF%BC%9A%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/image-20250728160034498.png">
+<meta property="og:image" content="https://david-chen31.github.io/davidchene/2025/07/26/5min%E9%80%9F%E9%80%9A%EF%BC%9A%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/image-20250728160222309.png">
+<meta property="og:image" content="https://david-chen31.github.io/2025/07/28/%E9%98%BF%E9%87%8C%E4%BA%91%E5%88%9D%E4%BD%93%E9%AA%8C%EF%BC%9A%E4%BB%8E%E5%90%8E%E7%AB%AF%E5%88%B0%E5%89%8D%E7%AB%AF/image-20250728160402582.png">
+<meta property="og:image" content="https://david-chen31.github.io/2025/07/28/%E9%98%BF%E9%87%8C%E4%BA%91%E5%88%9D%E4%BD%93%E9%AA%8C%EF%BC%9A%E4%BB%8E%E5%90%8E%E7%AB%AF%E5%88%B0%E5%89%8D%E7%AB%AF/image-20250728160429466.png">
+<meta property="og:image" content="https://david-chen31.github.io/davidchene/2025/07/26/5min%E9%80%9F%E9%80%9A%EF%BC%9A%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/image-20250728160933145.png">
+<meta property="og:image" content="https://david-chen31.github.io/davidchene/2025/07/26/5min%E9%80%9F%E9%80%9A%EF%BC%9A%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/image-20250728161511756.png">
+<meta property="og:image" content="https://david-chen31.github.io/davidchene/2025/07/26/5min%E9%80%9F%E9%80%9A%EF%BC%9A%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/image-20250728162724227.png">
+<meta property="og:image" content="https://david-chen31.github.io/davidchene/2025/07/26/5min%E9%80%9F%E9%80%9A%EF%BC%9A%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/image-20250728162848831.png">
+<meta property="og:image" content="https://david-chen31.github.io/davidchene/2025/07/26/5min%E9%80%9F%E9%80%9A%EF%BC%9A%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/image-20250728162938971.png">
+<meta property="og:image" content="https://david-chen31.github.io/davidchene/2025/07/26/5min%E9%80%9F%E9%80%9A%EF%BC%9A%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/image-20250728164301869.png">
+<meta property="og:image" content="https://david-chen31.github.io/davidchene/2025/07/26/5min%E9%80%9F%E9%80%9A%EF%BC%9A%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/image-20250728163251857.png">
+<meta property="article:published_time" content="2025-07-28T03:30:35.000Z">
+<meta property="article:modified_time" content="2025-07-28T08:44:31.343Z">
+<meta property="article:author" content="David Chen">
+<meta property="article:tag" content="云部署">
+<meta property="article:tag" content="函数计算">
+<meta property="article:tag" content="数据库">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://david-chen31.github.io/davidchene/2025/07/26/5min%E9%80%9F%E9%80%9A%EF%BC%9A%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/image-20250728155646125.png">
+  
+    <link rel="alternate" href="/atom.xml" title="DavidChenのBlog" type="application/atom+xml">
+  
+  <link rel="icon" href="/davidchene/css/images/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+    
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Yanone+Kaffeesatz%3A200%2C300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Oswald%3A300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+  
+<link rel="stylesheet" href="/davidchene/css/style.css">
+
+
+  
+<script src="/davidchene/js/jquery-3.1.1.min.js"></script>
+
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/davidchene/css/bootstrap.css" >
+  <link rel="stylesheet" href="/davidchene/css/fashion.css" >
+  <link rel="stylesheet" href="/davidchene/css/glyphs.css" >
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+
+
+<header id="allheader" class="site-header" role="banner" 
+   >
+  <div class="clearfix container">
+      <div class="site-branding">
+
+          <h1 class="site-title">
+            
+              <a href="/davidchene/" title="DavidChenのBlog" rel="home"> DavidChenのBlog </a>
+            
+          </h1>
+          
+          
+            
+          <nav id="main-navigation" class="main-navigation" role="navigation">
+            <a class="nav-open">Menu</a>
+            <a class="nav-close">Close</a>
+
+            <div class="clearfix sf-menu">
+              <ul id="main-nav" class="menu sf-js-enabled sf-arrows"  style="touch-action: pan-y;">
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663" linktext="/"> <a class="" href="/davidchene/">首页</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663" linktext="archives"> <a class="" href="/davidchene/archives">归档</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663" linktext="categories"> <a class="" href="/davidchene/categories">分类</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663" linktext="tags"> <a class="" href="/davidchene/tags">标签</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663" linktext="about"> <a class="" href="/davidchene/about">关于</a> </li>
+                    
+              </ul>
+            </div>
+          </nav>
+
+      </div>
+  </div>
+</header>
+
+
+  <div id="container">
+    <div id="wrap">
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-阿里云初体验：从后端到前端" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      阿里云初体验：从后端到前端
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/davidchene/2025/07/28/%E9%98%BF%E9%87%8C%E4%BA%91%E5%88%9D%E4%BD%93%E9%AA%8C%EF%BC%9A%E4%BB%8E%E5%90%8E%E7%AB%AF%E5%88%B0%E5%89%8D%E7%AB%AF/" class="article-date">
+	  <time datetime="2025-07-28T03:30:35.000Z" itemprop="datePublished">七月 28, 2025</time>
+	</a>
+
+      
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/davidchene/categories/%E5%90%8E%E7%AB%AF/">后端</a>
+ 
+      
+	<span id="busuanzi_container_page_pv">
+	  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+	</span>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="阿里云初体验：从后端到前端"><a href="#阿里云初体验：从后端到前端" class="headerlink" title="阿里云初体验：从后端到前端"></a>阿里云初体验：从后端到前端</h1><h2 id="项目缘由"><a href="#项目缘由" class="headerlink" title="项目缘由"></a>项目缘由</h2><p>​	最近天挺热，毫不耽误队长安排给我一个<em>用碱基序列查询Part编号及其信息的检索功能</em>任务。这任务看起来很吓人，数据方面可能要用python爬取，上线需要购买域名、云数据库，起初，我准备平静地接受死亡，但在沈阳旅馆单人间的一个晚上，我居然找到了官方提供的xml格式数据（它居然真的直接给你数据库结构和数据），任务难度直降至原来的50%！！</p>
+<p>​	前天队长来催，遂熬夜搞定。用阿里云产品完成比赛项目，不夸张的说完全是大炮打蚊子，主要我第一次使用阿里云大炮，潜心研究两天才搞懂大炮按钮在哪。炮弹轰出那一刻，嗯，蛮有成就感的呢~</p>
+<p>​	文章目录如下，其中有很多需要注意的点，稍有不慎就会bug连篇。</p>
+<pre><code>[TOC]
+</code></pre>
+<h2 id="后端数据库搭建与导入"><a href="#后端数据库搭建与导入" class="headerlink" title="后端数据库搭建与导入"></a>后端数据库搭建与导入</h2><p>数据库方面我选择了阿里云关系型数据库RDS，数据库类型是MySQL 8.0。</p>
+<p>第一次使用的用户可以选择免费试用，试用时长为1个月，完全足够小型测试，试用完成后如果不想续费购买，一定记得在<em>我的试用</em>中释放资源</p>
+<p>下面将展示如何把本地sql数据文件导入到云数据库中：</p>
+<p>首先进入我们数据库的<strong>实例列表</strong>，点开对应<strong>实例</strong></p>
+<p><img src="/davidchene/2025/07/26/5min%E9%80%9F%E9%80%9A%EF%BC%9A%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/image-20250728155646125.png" alt="image-20250728155646125"></p>
+<p>在<strong>账号管理</strong>里，会有自动创建的账户，你也可以自己创建一个账户，我这里直接用官方自动创建的账户dms_user_a599f7b</p>
+<p><img src="/davidchene/2025/07/26/5min%E9%80%9F%E9%80%9A%EF%BC%9A%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/image-20250728160034498.png" alt="image-20250728160034498"></p>
+<p>接下来，进入数据库管理，创建数据库，然后点击最右边的<strong>SQL查询</strong>进入DMS</p>
+<p><img src="/davidchene/2025/07/26/5min%E9%80%9F%E9%80%9A%EF%BC%9A%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/image-20250728160222309.png" alt="image-20250728160222309"></p>
+<p>鼠标移动到左上角，选择<strong>数据导入</strong></p>
+<p><img src="image-20250728160402582.png" alt="image-20250728160402582" style="zoom: 67%;" />       <img src="image-20250728160429466.png" alt="image-20250728160429466" style="zoom: 67%;" /></p>
+<p>选择刚刚创建的数据库，上传文件，提交申请</p>
+<p>在工单中选择立即执行</p>
+<p>成功后显示如下</p>
+<p><img src="/davidchene/2025/07/26/5min%E9%80%9F%E9%80%9A%EF%BC%9A%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/image-20250728160933145.png" alt="image-20250728160933145"></p>
+<p>此时进行sql查询就能显示上传sql文件里的所有数据了</p>
+<h2 id="后端函数计算实现"><a href="#后端函数计算实现" class="headerlink" title="后端函数计算实现"></a>后端函数计算实现</h2><p>老一套，选择产品<strong>函数计算试用资源包</strong>，第一次使用的用户可以免费试用3个月，之后不续费的话也是需要释放资源</p>
+<p>我们进入<strong>函数计算 FC 3.0</strong>，点击<strong>函数</strong>菜单，点击<strong>创建函数</strong></p>
+<p><img src="/davidchene/2025/07/26/5min%E9%80%9F%E9%80%9A%EF%BC%9A%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/image-20250728161511756.png" alt="image-20250728161511756"></p>
+<p>下面我使用的是事件函数，http触发器</p>
+<p>选择<strong>事件函数</strong>；<br><strong>函数代码</strong>模块选择<strong>运行环境</strong>（不知怎么，我老是忘选），这里我选择<strong>通过ZIP包上传代码</strong>(后面有讲如何构建ZIP包)；<br><strong>权限、网络、存储</strong>模块开启<strong>允许访问VPC</strong>，这里选择和数据库一样的VPC，<br>点击左下角<strong>创建</strong></p>
+<p>进入刚创建好的函数管理页，选择触发器，点击创建触发器，然后类型我选择http，认证方式选择无需认证，因为我的前端是静态，无法通过其他认证</p>
+<p><img src="/davidchene/2025/07/26/5min%E9%80%9F%E9%80%9A%EF%BC%9A%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/image-20250728162724227.png" alt="image-20250728162724227"></p>
+<p><img src="/davidchene/2025/07/26/5min%E9%80%9F%E9%80%9A%EF%BC%9A%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/image-20250728162848831.png" alt="image-20250728162848831"></p>
+<p>选择好就可以点击确定，这时会显示如下内容</p>
+<p><img src="/davidchene/2025/07/26/5min%E9%80%9F%E9%80%9A%EF%BC%9A%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/image-20250728162938971.png" alt="image-20250728162938971"></p>
+<p>最后设置数据库白名单，保证函数计算能够访问，这里我直接选择<strong>全部开发</strong>(豪爽)</p>
+<p><img src="/davidchene/2025/07/26/5min%E9%80%9F%E9%80%9A%EF%BC%9A%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/image-20250728164301869.png" alt="image-20250728164301869"></p>
+<p>前端就可以通过触发器的公网网址实现功能啦</p>
+<h3 id="构建ZIP包"><a href="#构建ZIP包" class="headerlink" title="构建ZIP包"></a>构建ZIP包</h3><p>关于如何构建ZIP包的内容，如果你已经掌握，直接跳过这一部分</p>
+<p>在本地安装依赖：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">bash复制编辑mkdir fc-search &amp;&amp; cd fc-search</span><br><span class="line">pip install flask pymysql -t .</span><br><span class="line">cp index.py .   # 把代码写入index.py</span><br><span class="line">zip -r fc-search.zip .</span><br></pre></td></tr></table></figure>
+
+<p>注意python文件<strong>一定命名为index.py</strong>，否则无效，原因暂时还没考察</p>
+<h2 id="调试-Debug"><a href="#调试-Debug" class="headerlink" title="调试&amp;Debug"></a>调试&amp;Debug</h2><h3 id="调试函数计算代码"><a href="#调试函数计算代码" class="headerlink" title="调试函数计算代码"></a>调试函数计算代码</h3><p>官方有<strong>测试函数</strong>功能，在网页的IDE中修改完代码后需要点击<strong>部署代码</strong>才会生效，测试函数的<strong>请求信息</strong>也可以自己更改，<strong>实时日志</strong>需要购买，我还没有试过</p>
+<p><img src="/davidchene/2025/07/26/5min%E9%80%9F%E9%80%9A%EF%BC%9A%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/image-20250728163251857.png" alt="image-20250728163251857"></p>
+<h3 id="The-‘Access-Control-Allow-Origin’-header-contains-multiple-values"><a href="#The-‘Access-Control-Allow-Origin’-header-contains-multiple-values" class="headerlink" title="The ‘Access-Control-Allow-Origin’ header contains multiple values"></a>The ‘Access-Control-Allow-Origin’ header contains multiple values</h3><p>遇到该bug时浏览器控制台输出如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">practice.html:1  Access to fetch at &#x27;https://func-gigh-sbcycnlqwy.cn-hangzhou.fcapp.run/?q=agagaatataaaaagccagattattaatccggcttttttattattt&#x27; from origin &#x27;http://localhost:52330&#x27; has been blocked by CORS policy: The &#x27;Access-Control-Allow-Origin&#x27; header contains multiple values &#x27;http://localhost:52330, http://localhost:52330&#x27;, but only one is allowed. Have the server send the header with a valid value.</span><br></pre></td></tr></table></figure>
+
+<p>说是Access-Control-Allow-Origin响应表头多于一个，按F12打开网络发现确实有两个响应标头</p>
+<p>解决方案：把index.py中所有和Access-Control-Allow-Origin有关的代码删去</p>
+<p>原因分析：可能函数计算会自动发送Access-Control-Allow-Origin，我的代码中也会发生，造成多于一个Access-Control-Allow-Origin响应标头</p>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/davidchene/categories/%E5%90%8E%E7%AB%AF/">后端</a>
+
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/davidchene/tags/%E4%BA%91%E9%83%A8%E7%BD%B2/" rel="tag">云部署</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/davidchene/tags/%E5%87%BD%E6%95%B0%E8%AE%A1%E7%AE%97/" rel="tag">函数计算</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/davidchene/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a></li></ul>
+
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/davidchene/2025/07/28/%E4%B8%80%E7%AF%87%E6%90%9E%E5%AE%9A%EF%BC%9AHexo%E5%8D%9A%E5%AE%A2%E5%BF%AB%E9%80%9F%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">一篇搞定：Hexo博客快速插入图片</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    
+      <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%98%BF%E9%87%8C%E4%BA%91%E5%88%9D%E4%BD%93%E9%AA%8C%EF%BC%9A%E4%BB%8E%E5%90%8E%E7%AB%AF%E5%88%B0%E5%89%8D%E7%AB%AF"><span class="nav-number">1.</span> <span class="nav-text">阿里云初体验：从后端到前端</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A1%B9%E7%9B%AE%E7%BC%98%E7%94%B1"><span class="nav-number">1.1.</span> <span class="nav-text">项目缘由</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8E%E7%AB%AF%E6%95%B0%E6%8D%AE%E5%BA%93%E6%90%AD%E5%BB%BA%E4%B8%8E%E5%AF%BC%E5%85%A5"><span class="nav-number">1.2.</span> <span class="nav-text">后端数据库搭建与导入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8E%E7%AB%AF%E5%87%BD%E6%95%B0%E8%AE%A1%E7%AE%97%E5%AE%9E%E7%8E%B0"><span class="nav-number">1.3.</span> <span class="nav-text">后端函数计算实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9E%84%E5%BB%BAZIP%E5%8C%85"><span class="nav-number">1.3.1.</span> <span class="nav-text">构建ZIP包</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B0%83%E8%AF%95-Debug"><span class="nav-number">1.4.</span> <span class="nav-text">调试&amp;Debug</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B0%83%E8%AF%95%E5%87%BD%E6%95%B0%E8%AE%A1%E7%AE%97%E4%BB%A3%E7%A0%81"><span class="nav-number">1.4.1.</span> <span class="nav-text">调试函数计算代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-%E2%80%98Access-Control-Allow-Origin%E2%80%99-header-contains-multiple-values"><span class="nav-number">1.4.2.</span> <span class="nav-text">The ‘Access-Control-Allow-Origin’ header contains multiple values</span></a></li></ol></li></ol></li></ol>
+    
+    </div>
+  </aside>
+</section>
+        
+      </div>
+
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/davidchene/" class="mobile-nav-link">Home</a>
+  
+    <a href="/davidchene/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/davidchene/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/davidchene/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/davidchene/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    <footer id="footer" class="site-footer">
+  
+
+  <div class="clearfix container">
+      <div class="site-info">
+	      &copy; 2025 DavidChenのBlog All Rights Reserved.
+        
+            <span id="busuanzi_container_site_uv">
+              本站访客数<span id="busuanzi_value_site_uv"></span>人次  
+              本站总访问量<span id="busuanzi_value_site_pv"></span>次
+            </span>
+          
+      </div>
+      <div class="site-credit">
+        Theme by <a href="https://github.com/iTimeTraveler/hexo-theme-hipaper" target="_blank">hipaper</a>
+      </div>
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+
+
+    <!-- headerblur min height -->
+    
+    
+</script>
+    
+<div style="display: none;">
+  <script src="https://s11.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+</div>
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  
+<link rel="stylesheet" href="/davidchene/fancybox/jquery.fancybox.css">
+
+  
+<script src="/davidchene/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/davidchene/js/script.js"></script>
+
+
+<script src="/davidchene/js/bootstrap.js"></script>
+
+
+<script src="/davidchene/js/main.js"></script>
+
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js" async=""></script>
+</body>
+</html>
