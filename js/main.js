@@ -203,7 +203,7 @@ const sco = {
     const $music = document.querySelector("#nav-music meting-js");
     if ($music && $music.aplayer) { 
       this.isMusicBind = true;
-      $music.onclick = () => this.musicPlaying && this.musicToggle(false);
+      $music.onclick = () => this.musicPlaying && this.musicToggle(true);
       $music.aplayer.on('loadeddata', () =>{
         coverColor(true);
       })
@@ -213,7 +213,7 @@ const sco = {
     if (!this.isMusicBind) this.musicBind();
     
     const $music = document.querySelector("#nav-music");
-    const $meting = document.querySelector("meting-js");
+    const $meting = document.querySelector("#nav-music meting-js");
     const $console = document.getElementById("consoleMusic");
     
     this.musicPlaying = !this.musicPlaying;
