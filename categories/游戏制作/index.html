@@ -1,501 +1,198 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  <title>Category: 游戏制作 | DavidChenのBlog</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  
-  
-  
-  
-  <meta property="og:type" content="website">
-<meta property="og:title" content="DavidChenのBlog">
-<meta property="og:url" content="https://david-chen31.github.io/categories/%E6%B8%B8%E6%88%8F%E5%88%B6%E4%BD%9C/index.html">
-<meta property="og:site_name" content="DavidChenのBlog">
-<meta property="og:locale" content="zh_CN">
-<meta property="article:author" content="David Chen">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="DavidChenのBlog" type="application/atom+xml">
-  
-  <link rel="icon" href="/davidchene/css/images/favicon.ico">
-  
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
-  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
-  <style type="text/css">
-    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
-    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
-    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
-    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
-    
-  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Yanone+Kaffeesatz%3A200%2C300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>分类: 游戏制作 | DavidChenのBlog</title><noscript>开启JavaScript才能访问本站哦~</noscript><link rel="icon" href="/davidchene/img/pwa/favicon.png"><!-- index.css--><link rel="stylesheet" href="/davidchene/css/index.css?v=3.0.19"><!-- inject head--><link rel="canonical" href="https://david-chen31.github.io/categories/%E6%B8%B8%E6%88%8F%E5%88%B6%E4%BD%9C/index.html"><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/css/all.min.css"><!-- aplayer--><!-- swiper--><!-- fancybox ui--><!-- katex--><!-- Open Graph--><meta name="description"><!-- pwa--><meta name="apple-mobile-web-app-capable" content="DavidChenのBlog"><meta name="theme-color" content="var(--efu-main)"><meta name="apple-mobile-web-app-status-bar-style" content="var(--efu-main)"><link rel="bookmark" href="/davidchene/img/pwa/favicon.png"><link rel="apple-touch-icon" href="/davidchene/img/pwa/favicon.png" sizes="180x180"><script>console.log(' %c Solitude %c ' + '3.0.19' + ' %c https://github.com/everfu/hexo-theme-solitude',
+    'background:#35495e ; padding: 1px; border-radius: 3px 0 0 3px;  color: #fff',
+    'background:#ff9a9a ; padding: 1px; border-radius: 0 3px 3px 0;  color: #fff',
+    'background:unset ; padding: 1px; border-radius: 0 3px 3px 0;  color: #fff')
+</script><script>(()=>{
+        const saveToLocal = {
+            set: function setWithExpiry(key, value, ttl) {
+                if (ttl === 0)
+                    return
+                const now = new Date()
+                const expiryDay = ttl * 86400000
+                const item = {
+                    value: value,
+                    expiry: now.getTime() + expiryDay
+                }
+                localStorage.setItem(key, JSON.stringify(item))
+            },
+            get: function getWithExpiry(key) {
+                const itemStr = localStorage.getItem(key)
 
-  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Oswald%3A300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
-  
-<link rel="stylesheet" href="/davidchene/css/style.css">
+                if (!itemStr) {
+                    return undefined
+                }
+                const item = JSON.parse(itemStr)
+                const now = new Date()
 
+                if (now.getTime() > item.expiry) {
+                    localStorage.removeItem(key)
+                    return undefined
+                }
+                return item.value
+            }
+        };
+        window.utils = {
+            saveToLocal: saveToLocal,
+            getCSS: (url, id = false) => new Promise((resolve, reject) => {
+              const link = document.createElement('link')
+              link.rel = 'stylesheet'
+              link.href = url
+              if (id) link.id = id
+              link.onerror = reject
+              link.onload = link.onreadystatechange = function() {
+                const loadState = this.readyState
+                if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+                link.onload = link.onreadystatechange = null
+                resolve()
+              }
+              document.head.appendChild(link)
+            }),
+            getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+              const script = document.createElement('script')
+              script.src = url
+              script.async = true
+              script.onerror = reject
+              script.onload = script.onreadystatechange = function() {
+                const loadState = this.readyState
+                if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+                script.onload = script.onreadystatechange = null
+                resolve()
+              }
 
-  
-<script src="/davidchene/js/jquery-3.1.1.min.js"></script>
+              Object.keys(attr).forEach(key => {
+                script.setAttribute(key, attr[key])
+              })
 
+              document.head.appendChild(script)
+            }),
+            addGlobalFn: (key, fn, name = false, parent = window) => {
+                const globalFn = parent.globalFn || {}
+                const keyObj = globalFn[key] || {}
 
-  <!-- Bootstrap core CSS -->
-  <link rel="stylesheet" href="/davidchene/css/bootstrap.css" >
-  <link rel="stylesheet" href="/davidchene/css/fashion.css" >
-  <link rel="stylesheet" href="/davidchene/css/glyphs.css" >
+                if (name && keyObj[name]) return
 
-<meta name="generator" content="Hexo 7.3.0"></head>
-
-
-
-  <body>
-
-
-  
-  
-  <div class="site-header-image">
-    <img id="originBg" width="100%" alt="Hike News" src="">
-  </div>
-
-  <div id="header-blur" class="site-header-image blur" style="position: absolute; top:0; height: 207px; min-height: 207px; min-width: 100%;">
-    <img id="blurBg" width="100%" style="top: 96%" alt="Hike News" src="">
-  </div>
-
-  <script>
-        var imgUrls = "css/images/pose01.jpg,https://source.unsplash.com/collection/954550/1920x1080,https://source.unsplash.com/collection/954550/1920x1081".split(",");
-        var random = Math.floor((Math.random() * imgUrls.length ));
-        if (imgUrls[random].startsWith('http') || imgUrls[random].indexOf('://') >= 0) {
-          document.getElementById("originBg").src=imgUrls[random];
-          document.getElementById("blurBg").src=imgUrls[random];
-        } else {
-          document.getElementById("originBg").src='/davidchene/' + imgUrls[random];
-          document.getElementById("blurBg").src='/davidchene/' + imgUrls[random];
+                name = name || Object.keys(keyObj).length
+                keyObj[name] = fn
+                globalFn[key] = keyObj
+                parent.globalFn = globalFn
+            },
+            addEventListenerPjax: (ele, event, fn, option = false) => {
+              ele.addEventListener(event, fn, option)
+              utils.addGlobalFn('pjax', () => {
+                  ele.removeEventListener(event, fn, option)
+              })
+            },
+            diffDateFormat: (selector) => {
+                selector.forEach(item => {
+                    const date = new Date(item.getAttribute('datetime') || item.textContent);
+                    item.textContent = (date.getMonth() + 1).toString()+'/'+date.getDate().toString();
+                });
+            },
         }
-    </script>
-
-
-
-
-<header id="allheader" class="site-header" role="banner" 
-   style="width: 100%; position: absolute; top:0; background: rgba(255,255,255,.8);"  >
-  <div class="clearfix container">
-      <div class="site-branding">
-
-          <h1 class="site-title">
-            
-              <a href="/davidchene/" title="DavidChenのBlog" rel="home"> DavidChenのBlog </a>
-            
-          </h1>
-          
-          
-            
-          <nav id="main-navigation" class="main-navigation" role="navigation">
-            <a class="nav-open">Menu</a>
-            <a class="nav-close">Close</a>
-
-            <div class="clearfix sf-menu">
-              <ul id="main-nav" class="menu sf-js-enabled sf-arrows"  style="touch-action: pan-y;">
-                    
-                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663" linktext="/"> <a class="" href="/davidchene/">首页</a> </li>
-                    
-                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663" linktext="archives"> <a class="" href="/davidchene/archives">归档</a> </li>
-                    
-                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663" linktext="categories"> <a class="" href="/davidchene/categories">分类</a> </li>
-                    
-                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663" linktext="tags"> <a class="" href="/davidchene/tags">标签</a> </li>
-                    
-                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663" linktext="about"> <a class="" href="/davidchene/about">关于</a> </li>
-                    
-              </ul>
-            </div>
-          </nav>
-
-      </div>
-  </div>
-</header>
-
-
-  <div id="container">
-    <div id="wrap">
-            
-      <div id="content" class="outer">
-        
-          <section id="main">
-  
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <h1><a href="/davidchene/archives/2025" class="archive-year">2025</a></h1>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-
-      <a href="/davidchene/2025/07/26/Cocos%E5%B0%8F%E6%B8%B8%E6%88%8F%E5%8F%91%E5%B8%83%E5%88%B0web%E6%95%99%E7%A8%8B%EF%BC%8C%E7%9C%8B%E8%BF%99%E4%B8%80%E7%AF%87%E5%B0%B1%E5%A4%9F%E4%BA%86%EF%BC%81/" class="archive-article-date">
-		  <time datetime="2025-07-26T13:05:15.000Z" itemprop="datePublished">7月 26, 2025</time>
-	  </a>
-      
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="archive-article-title" href="/davidchene/2025/07/26/Cocos%E5%B0%8F%E6%B8%B8%E6%88%8F%E5%8F%91%E5%B8%83%E5%88%B0web%E6%95%99%E7%A8%8B%EF%BC%8C%E7%9C%8B%E8%BF%99%E4%B8%80%E7%AF%87%E5%B0%B1%E5%A4%9F%E4%BA%86%EF%BC%81/">Cocos小游戏发布到web教程，看这一篇就够了！</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-
-</section>
-          <aside id="sidebar">
-  
-    <div style="margin: 20px 0;">
-	<div id="search-form-wrap">
-
-    <form class="search-form">
-        <label style="width: 72%;">
-            <span class="screen-reader-text">Search for:</span>
-            <input type="search" class="search-field" style="height: 36px; width: 100%;" placeholder=" 搜索…" value="" name="s" title="Search for:">
-        </label>
-        <input type="submit" class="search-form-submit" value="搜索">
-    </form>
-    <div class="ins-search">
-    <div class="ins-search-mask"></div>
-    <div class="ins-search-container">
-        <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="请输入关键词..."/>
-            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
-        </div>
-        <div class="ins-section-wrapper">
-            <div class="ins-section-container"></div>
-        </div>
-    </div>
-</div>
-<script>
-(function (window) {
-    var INSIGHT_CONFIG = {
-        TRANSLATION: {
-            POSTS: '文章',
-            PAGES: '页面',
-            CATEGORIES: '分类',
-            TAGS: '标签',
-            UNTITLED: '(无标题)',
-        },
-        ROOT_URL: '/davidchene/',
-        CONTENT_URL: '/davidchene/content.json',
-    };
-    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
-})(window);
-</script>
-
-<script src="/davidchene/js/insight.js"></script>
-
-
-</div>
-</div>
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">联系我们</h3>
-    <div class="widget widget_athemes_social_icons">
-
-    	<ul class="clearfix widget-social-icons">   
-    	
-   			<li><a target="_blank" rel="noopener" href="https://github.com/iTimeTraveler" title="Github"><i class="fa fa-github" aria-hidden="true"></i></a></li> 
-
-   		
-   			<li><a href="" title="Weibo"><i class="fa fa-weibo" aria-hidden="true"></i></a></li> 
-
-   		
-   			<li><a href="" title="Twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li> 
-
-   		
-   			<li><a href="" title="Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li> 
-
-   		
-   			<li><a href="" title="Google-plus"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li> 
-
-   		
-   			<li><a href="" title="Instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></li> 
-
-   		
-   		</ul>
-
-
-   		<!--
-   		<ul class="clearfix widget-social-icons">   		
-   		<li class="widget-si-twitter"><a target="_blank" rel="noopener" href="http://twitter.com" title="Twitter"><i class="ico-twitter"></i></a></li> 
-		<li class="widget-si-facebook"><a target="_blank" rel="noopener" href="http://facebook.com" title="Facebook"><i class="ico-facebook"></i></a></li>
-			<li class="widget-si-gplus"><a target="_blank" rel="noopener" href="http://plus.google.com" title="Google+"><i class="ico-gplus"></i></a></li>
-			<li class="widget-si-pinterest"><a target="_blank" rel="noopener" href="http://pinterest.com" title="Pinterest"><i class="ico-pinterest"></i></a></li>
-			<li class="widget-si-flickr"><a target="_blank" rel="noopener" href="http://flickr.com" title="Flickr"><i class="ico-flickr"></i></a></li>
-			<li class="widget-si-instagram"><a target="_blank" rel="noopener" href="http://instagram.com" title="Instagram"><i class="ico-instagram"></i></a></li>
-		</ul> -->
-
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget_athemes_tabs">
-    <ul id="widget-tab" class="clearfix widget-tab-nav">
-      <li class="active"><a>最新文章</a></li>
-    </ul>
-    <div class="widget">
-      <ul>
-        
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/davidchene/2025/07/28/%E9%98%BF%E9%87%8C%E4%BA%91%E5%88%9D%E4%BD%93%E9%AA%8C%EF%BC%9A%E4%BB%8E%E5%90%8E%E7%AB%AF%E5%88%B0%E5%89%8D%E7%AB%AF/">阿里云初体验：从后端到前端</a></h6>
-              <span>七月 28, 2025</span>
-            </div>
-
-          </li>
-        
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/davidchene/2025/07/28/%E4%B8%80%E7%AF%87%E6%90%9E%E5%AE%9A%EF%BC%9AHexo%E5%8D%9A%E5%AE%A2%E5%BF%AB%E9%80%9F%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/">一篇搞定：Hexo博客快速插入图片</a></h6>
-              <span>七月 28, 2025</span>
-            </div>
-
-          </li>
-        
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/davidchene/2025/07/26/5min%E9%80%9F%E9%80%9A%EF%BC%9A%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">5min速通：个人博客搭建</a></h6>
-              <span>七月 26, 2025</span>
-            </div>
-
-          </li>
-        
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/davidchene/2025/07/26/Cocos%E5%B0%8F%E6%B8%B8%E6%88%8F%E5%8F%91%E5%B8%83%E5%88%B0web%E6%95%99%E7%A8%8B%EF%BC%8C%E7%9C%8B%E8%BF%99%E4%B8%80%E7%AF%87%E5%B0%B1%E5%A4%9F%E4%BA%86%EF%BC%81/">Cocos小游戏发布到web教程，看这一篇就够了！</a></h6>
-              <span>七月 26, 2025</span>
-            </div>
-
-          </li>
-        
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/davidchene/2025/07/26/hello-world/">开门大吉</a></h6>
-              <span>七月 26, 2025</span>
-            </div>
-
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">分类</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/davidchene/categories/%E5%89%8D%E7%AB%AF/">前端</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/davidchene/categories/%E5%90%8E%E7%AB%AF/">后端</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/davidchene/categories/%E6%B8%B8%E6%88%8F%E5%88%B6%E4%BD%9C/">游戏制作</a><span class="category-list-count">1</span></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">标签</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/davidchene/tags/cocos/" rel="tag">cocos</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/davidchene/tags/%E4%BA%91%E9%83%A8%E7%BD%B2/" rel="tag">云部署</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/davidchene/tags/%E5%87%BD%E6%95%B0%E8%AE%A1%E7%AE%97/" rel="tag">函数计算</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/davidchene/tags/%E5%8D%9A%E5%AE%A2/" rel="tag">博客</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/davidchene/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a><span class="tag-list-count">1</span></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">标签云</h3>
-    <div class="widget tagcloud">
-      <a href="/davidchene/tags/cocos/" style="font-size: 10px;">cocos</a> <a href="/davidchene/tags/%E4%BA%91%E9%83%A8%E7%BD%B2/" style="font-size: 10px;">云部署</a> <a href="/davidchene/tags/%E5%87%BD%E6%95%B0%E8%AE%A1%E7%AE%97/" style="font-size: 10px;">函数计算</a> <a href="/davidchene/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 10px;">博客</a> <a href="/davidchene/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 10px;">数据库</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">归档</h3>
-
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/davidchene/archives/2025/07/">七月 2025</a><span class="archive-list-count">5</span></li></ul>
-    </div>
-  </div>
-
-
-  
-</aside>
-        
-      </div>
-
-    </div>
-    <!-- <nav id="mobile-nav">
-  
-    <a href="/davidchene/" class="mobile-nav-link">Home</a>
-  
-    <a href="/davidchene/archives" class="mobile-nav-link">Archives</a>
-  
-    <a href="/davidchene/categories" class="mobile-nav-link">Categories</a>
-  
-    <a href="/davidchene/tags" class="mobile-nav-link">Tags</a>
-  
-    <a href="/davidchene/about" class="mobile-nav-link">About</a>
-  
-</nav> -->
-    <footer id="footer" class="site-footer">
-  
-
-  <div class="clearfix container">
-      <div class="site-info">
-	      &copy; 2025 DavidChenのBlog All Rights Reserved.
-        
-            <span id="busuanzi_container_site_uv">
-              本站访客数<span id="busuanzi_value_site_uv"></span>人次  
-              本站总访问量<span id="busuanzi_value_site_pv"></span>次
-            </span>
-          
-      </div>
-      <div class="site-credit">
-        Theme by <a href="https://github.com/iTimeTraveler/hexo-theme-hipaper" target="_blank">hipaper</a>
-      </div>
-  </div>
-</footer>
-
-
-<!-- min height -->
-
-<script>
-    var wrapdiv = document.getElementById("wrap");
-    var contentdiv = document.getElementById("content");
-
-    wrapdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
-    contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
-
-
-    <!-- headerblur min height -->
-    
-      var headerblur = document.getElementById("header-blur");
-      headerblur.style.minHeight = window.getComputedStyle(document.getElementById("allheader"), null).height;
-    
-    
-</script>
-    
-<div style="display: none;">
-  <script src="https://s11.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
-</div>
-
-<!-- mathjax config similar to math.stackexchange -->
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-      processEscapes: true
+    })()</script><!-- theme--><script>initTheme = () => {
+    let isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const cachedMode = utils.saveToLocal.get('theme');
+    if (cachedMode === undefined) {
+        const nowMode =
+            isDarkMode ? 'dark' : 'light'
+        document.documentElement.setAttribute('data-theme', nowMode);
+    } else {
+        document.documentElement.setAttribute('data-theme', cachedMode);
     }
-  });
-</script>
+    typeof rm === 'object' && rm.mode(cachedMode === 'dark' && isDarkMode)
+}
+initTheme()</script><!-- global head--><script>const GLOBAL_CONFIG = {
+    root: '/davidchene/',
+    algolia: undefined,
+    localsearch: undefined,
+    runtime: '2023-04-20 00:00:00',
+    lazyload: {
+        enable: false,
+        error: '/img/error_load.avif'
+    },
+    copyright: false,
+    highlight: {"limit":200,"expand":true,"copy":true,"syntax":"highlight.js"},
+    randomlink: false,
+    lang: {"theme":{"dark":"已切换至深色模式","light":"已切换至浅色模式"},"copy":{"success":"复制成功","error":"复制失败"},"backtop":"返回顶部","time":{"day":"天前","hour":"小时前","just":"刚刚","min":"分钟前","month":"个月前"},"day":" 天","f12":"开发者模式已打开，请遵循GPL协议。","totalk":"无需删除空行，直接输入评论即可"},
+    aside: {
+        state: {
+            morning: "✨ 早上好，新的一天开始了",
+            noon: "🍲 午餐时间",
+            afternoon: "🌞 下午好",
+            night: "早点休息",
+            goodnight: "晚安 😴",
+        },
+        witty_words: [],
+        witty_comment: {
+            prefix: '好久不见，',
+            back: '欢迎再次回来，',
+        },
+    },
+    covercolor: {
+        enable: false
+    },
+    comment: false,
+    lightbox: 'null',
+    right_menu: false,
+    translate: {"translateDelay":0,"defaultEncoding":2},
+    lure: false,
+    expire: false,
+};</script><!-- page-config head--><script id="config-diff">var PAGE_CONFIG = {
+    is_post: false,
+    is_page: true,
+    is_home: false,
+    page: '',
+    toc: false,
+    comment: false,
+    ai_text: false,
+    color: false,
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body id="body"><!-- universe--><!-- background img--><!-- loading--><!-- console--><!-- sidebar--><div id="sidebar" style="zoom: 1;"><div id="menu-mask" style="display: none;"></div><div id="sidebar-menus"><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/davidchene/archives/"><div class="headline">文章</div><div class="length-num">5</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/davidchene/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/davidchene/tags/"><div class="headline">标签</div><div class="length-num">5</div></a></div></div></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><span class="darkmode_switchbutton menu-child" onclick="sco.switchDarkMode()"><i class="solitude fas fa-circle-half-stroke"></i><span>显示模式</span></span></div><span class="sidebar-menu-item-title">标签</span><div class="card-tags"><div class="card-tag-cloud"><a href="/davidchene/tags/%E5%8D%9A%E5%AE%A2/">博客<sup>1</sup></a><a href="/davidchene/tags/cocos/">cocos<sup>1</sup></a><a href="/davidchene/tags/%E4%BA%91%E9%83%A8%E7%BD%B2/">云部署<sup>1</sup></a><a href="/davidchene/tags/%E5%87%BD%E6%95%B0%E8%AE%A1%E7%AE%97/">函数计算<sup>1</sup></a><a href="/davidchene/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库<sup>1</sup></a></div></div></div></div><!-- keyboard--><!-- righhtside--><div class="page" id="body-wrap"><header class="not-top-img" id="page-header"><nav class="show" id="nav"><div id="nav-group"><div id="blog_name"><a id="site-name" href="/davidchene/" title="返回博客主页"><span class="title">Solitude</span><i class="solitude fas fa-home"></i></a></div><div id="page-name-mask"><div id="page-name"><a id="page-name-text" onclick="sco.toTop()">分类: 游戏制作</a></div></div><div id="menus"></div><div id="nav-left"></div><div id="nav-right"><div class="nav-button" id="nav-totop" onclick="sco.toTop()"><a class="totopbtn"><i class="solitude fas fa-arrow-up"></i><span id="percent">0</span></a></div><div id="toggle-menu"><a class="site-page"><i class="solitude fas fa-bars"></i></a></div></div></div></nav></header><main class="layout" id="content-inner"><div id="category"><div id="category-bar"><div class="category-bar-items" id="category-bar-items"><div class="category-bar-item" id="category-bar-home"><a href="/davidchene/">推荐</a></div><div class="category-bar-item"><a href="/davidchene/archives/">全部文章</a></div><div class="category-bar-item" id="前端"><a href="/davidchene/categories/%E5%89%8D%E7%AB%AF/">前端</a></div><div class="category-bar-item" id="游戏制作"><a href="/davidchene/categories/%E6%B8%B8%E6%88%8F%E5%88%B6%E4%BD%9C/">游戏制作</a></div><div class="category-bar-item" id="后端"><a href="/davidchene/categories/%E5%90%8E%E7%AB%AF/">后端</a></div></div><div class="category-bar-right"><a class="category-bar-more" href="/davidchene/categories/">更多</a></div></div><div class="recent-posts" id="recent-posts"><div class="recent-post-item" onclick="pjax.loadUrl('/davidchene/2025/07/26/Cocos%E5%B0%8F%E6%B8%B8%E6%88%8F%E5%8F%91%E5%B8%83%E5%88%B0web%E6%95%99%E7%A8%8B%EF%BC%8C%E7%9C%8B%E8%BF%99%E4%B8%80%E7%AF%87%E5%B0%B1%E5%A4%9F%E4%BA%86%EF%BC%81/')"><div class="post_cover"><a href="/davidchene/2025/07/26/Cocos%E5%B0%8F%E6%B8%B8%E6%88%8F%E5%8F%91%E5%B8%83%E5%88%B0web%E6%95%99%E7%A8%8B%EF%BC%8C%E7%9C%8B%E8%BF%99%E4%B8%80%E7%AF%87%E5%B0%B1%E5%A4%9F%E4%BA%86%EF%BC%81/" title="Cocos小游戏发布到web教程，看这一篇就够了！"><img class="post_bg" src="/davidchene/" alt="Cocos小游戏发布到web教程，看这一篇就够了！"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><span class="original">游戏制作</span><a class="unvisited-post" href="/davidchene/2025/07/26/Cocos%E5%B0%8F%E6%B8%B8%E6%88%8F%E5%8F%91%E5%B8%83%E5%88%B0web%E6%95%99%E7%A8%8B%EF%BC%8C%E7%9C%8B%E8%BF%99%E4%B8%80%E7%AF%87%E5%B0%B1%E5%A4%9F%E4%BA%86%EF%BC%81/">未读</a></div><a class="article-title" href="/davidchene/2025/07/26/Cocos%E5%B0%8F%E6%B8%B8%E6%88%8F%E5%8F%91%E5%B8%83%E5%88%B0web%E6%95%99%E7%A8%8B%EF%BC%8C%E7%9C%8B%E8%BF%99%E4%B8%80%E7%AF%87%E5%B0%B1%E5%A4%9F%E4%BA%86%EF%BC%81/" title="Cocos小游戏发布到web教程，看这一篇就够了！">Cocos小游戏发布到web教程，看这一篇就够了！</a></div><div class="article-meta-wrap"><span class="article-meta tags"><a class="article-meta__tags" href="/davidchene/tags/cocos/" onclick="event.stopPropagation();"><span class="tags-punctuation"><i class="solitude fas fa-hashtag"></i>cocos</span></a></span><span class="post-meta-date"><time datetime="2025-07-26T13:05:15.000Z"></time></span></div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><div class="toPageGroup"><input id="toPageText" oninput="value=value.replace(/[^0-9]/g,'')" maxlength="3" title="跳转到指定页面" onkeyup="if (this.value === '0') this.value = ''"><a id="toPageButton" onclick="sco.toPage()"><i class="solitude fas fa-angles-right"></i></a></div></div></nav></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><div class="top-group"><div class="sayhi" id="sayhi" onclick="sco.changeWittyWord()"></div></div></div><div class="avatar"><img alt="头像" src="/img/logo.png"></div><div class="description"></div><div class="bottom-group"><span class="left"><div class="name">David Chen</div><div class="desc">只有迎风，风筝才能飞得更高。</div></span><div class="social-icons is-center"></div></div></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="solitude fas fa-map"></i><span>最近发布</span></div><div class="aside-list"><a class="aside-list-item" href="/davidchene/2025/07/28/%E9%98%BF%E9%87%8C%E4%BA%91%E5%88%9D%E4%BD%93%E9%AA%8C%EF%BC%9A%E4%BB%8E%E5%90%8E%E7%AB%AF%E5%88%B0%E5%89%8D%E7%AB%AF/" title="阿里云初体验：从后端到前端"><div class="content"><span class="title" href="/davidchene/2025/07/28/%E9%98%BF%E9%87%8C%E4%BA%91%E5%88%9D%E4%BD%93%E9%AA%8C%EF%BC%9A%E4%BB%8E%E5%90%8E%E7%AB%AF%E5%88%B0%E5%89%8D%E7%AB%AF/" title="阿里云初体验：从后端到前端">阿里云初体验：从后端到前端</span><span class="categories" href="/davidchene/2025/07/28/%E9%98%BF%E9%87%8C%E4%BA%91%E5%88%9D%E4%BD%93%E9%AA%8C%EF%BC%9A%E4%BB%8E%E5%90%8E%E7%AB%AF%E5%88%B0%E5%89%8D%E7%AB%AF/">后端</span></div></a><a class="aside-list-item" href="/davidchene/2025/07/28/%E4%B8%80%E7%AF%87%E6%90%9E%E5%AE%9A%EF%BC%9AHexo%E5%8D%9A%E5%AE%A2%E5%BF%AB%E9%80%9F%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/" title="一篇搞定：Hexo博客快速插入图片"><div class="content"><span class="title" href="/davidchene/2025/07/28/%E4%B8%80%E7%AF%87%E6%90%9E%E5%AE%9A%EF%BC%9AHexo%E5%8D%9A%E5%AE%A2%E5%BF%AB%E9%80%9F%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/" title="一篇搞定：Hexo博客快速插入图片">一篇搞定：Hexo博客快速插入图片</span><span class="categories" href="/davidchene/2025/07/28/%E4%B8%80%E7%AF%87%E6%90%9E%E5%AE%9A%EF%BC%9AHexo%E5%8D%9A%E5%AE%A2%E5%BF%AB%E9%80%9F%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/">前端</span></div></a><a class="aside-list-item" href="/davidchene/2025/07/26/5min%E9%80%9F%E9%80%9A%EF%BC%9A%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" title="5min速通：个人博客搭建"><div class="content"><span class="title" href="/davidchene/2025/07/26/5min%E9%80%9F%E9%80%9A%EF%BC%9A%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" title="5min速通：个人博客搭建">5min速通：个人博客搭建</span></div></a><a class="aside-list-item" href="/davidchene/2025/07/26/Cocos%E5%B0%8F%E6%B8%B8%E6%88%8F%E5%8F%91%E5%B8%83%E5%88%B0web%E6%95%99%E7%A8%8B%EF%BC%8C%E7%9C%8B%E8%BF%99%E4%B8%80%E7%AF%87%E5%B0%B1%E5%A4%9F%E4%BA%86%EF%BC%81/" title="Cocos小游戏发布到web教程，看这一篇就够了！"><div class="content"><span class="title" href="/davidchene/2025/07/26/Cocos%E5%B0%8F%E6%B8%B8%E6%88%8F%E5%8F%91%E5%B8%83%E5%88%B0web%E6%95%99%E7%A8%8B%EF%BC%8C%E7%9C%8B%E8%BF%99%E4%B8%80%E7%AF%87%E5%B0%B1%E5%A4%9F%E4%BA%86%EF%BC%81/" title="Cocos小游戏发布到web教程，看这一篇就够了！">Cocos小游戏发布到web教程，看这一篇就够了！</span><span class="categories" href="/davidchene/2025/07/26/Cocos%E5%B0%8F%E6%B8%B8%E6%88%8F%E5%8F%91%E5%B8%83%E5%88%B0web%E6%95%99%E7%A8%8B%EF%BC%8C%E7%9C%8B%E8%BF%99%E4%B8%80%E7%AF%87%E5%B0%B1%E5%A4%9F%E4%BA%86%EF%BC%81/">游戏制作</span></div></a><a class="aside-list-item" href="/davidchene/2025/07/26/hello-world/" title="开门大吉"><div class="content"><span class="title" href="/davidchene/2025/07/26/hello-world/" title="开门大吉">开门大吉</span></div></a></div></div><div class="card-widget card-tags card-archives card-webinfo card-allinfo"><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章总数 :</div><div class="item-count">5</div></div><div class="webinfo-item"><div class="item-name">建站天数 :</div><div class="item-count" id="runtimeshow"></div></div><div class="webinfo-item"><div class="item-name">最后更新 :</div><time class="item-count" datetime="2025-08-09T08:03:47.988Z"></time></div></div></div></div></div></main><footer id="footer"><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div class="copyright">© 2023 - 2025 By&nbsp;<a class="footer-bar-link" href="/davidchene/"><img class="author-avatar" src="/davidchene/img/pwa/favicon.png">David Chen</a></div><div class="beian-group"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://hexo.io/">框架：Hexo</a><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/everfu/hexo-theme-solitude">主题：Solitude</a></div></div></div></div></footer></div><!-- right_menu--><!-- inject body--><div><script src="/davidchene/js/utils.js?v=3.0.19"></script><script src="/davidchene/js/main.js?v=3.0.19"></script><script src="/davidchene/js/third_party/waterfall.min.js?v=3.0.19"></script><script src="https://fastly.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script src="/davidchene/js/tw_cn.js?v=3.0.19"></script><script src="https://fastly.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.js"></script><script>window.paceOptions = {
+  restartOnPushState: false
+}
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      tex2jax: {
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-      }
-    });
-</script>
+utils.addGlobalFn('pjaxSend', () => {
+  Pace.restart()
+}, 'pace_restart')
+</script><script src="https://fastly.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><div class="js-pjax"></div></div><!-- pjax--><script>const pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: ["title","#body-wrap","#site-config","meta[name=\"description\"]",".js-pjax","meta[property^=\"og:\"]","#config-diff",".rs_show",".rs_hide"],
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+})
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for(i=0; i < all.length; i += 1) {
-            all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-    });
-</script>
+document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+})
 
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
+document.addEventListener('pjax:complete', () => {
+    window.refreshFn()
 
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+        const newScript = document.createElement('script')
+        const content = item.text || item.textContent || item.innerHTML || ""
+        Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+        newScript.appendChild(document.createTextNode(content))
+        item.parentNode.replaceChild(newScript, item)
+    })
 
-  
-<link rel="stylesheet" href="/davidchene/fancybox/jquery.fancybox.css">
+    GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
 
-  
-<script src="/davidchene/fancybox/jquery.fancybox.pack.js"></script>
+})
 
-
-
-
-<script src="/davidchene/js/script.js"></script>
-
-
-<script src="/davidchene/js/bootstrap.js"></script>
-
-
-<script src="/davidchene/js/main.js"></script>
-
-
-
-
-
-
-
-
-  <div style="display: none;">
-    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
-  </div>
-
-
-
-	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
-	</script>
-
-
-
-
-
-
-  </div>
-
-  <a id="rocket" href="#top" class=""></a>
-  <script type="text/javascript" src="/js/totop.js" async=""></script>
-</body>
-</html>
+document.addEventListener('pjax:error', (e) => {
+    if (e.request.status === 404) {
+        pjax.loadUrl('/404.html')
+    }
+})</script><!-- google adsense--><!-- search--><!-- music--></body></html>
+        <script>
+            const posts = ["2025/07/28/阿里云初体验：从后端到前端/","2025/07/28/一篇搞定：Hexo博客快速插入图片/","2025/07/26/5min速通：个人博客搭建/","2025/07/26/Cocos小游戏发布到web教程，看这一篇就够了！/","2025/07/26/hello-world/"];
+            function toRandomPost() {
+                const randomPost = posts[Math.floor(Math.random() * posts.length)];
+                pjax.loadUrl(GLOBAL_CONFIG.root + randomPost);
+            }
+        </script>
