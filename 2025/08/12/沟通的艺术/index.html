@@ -1,0 +1,216 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>沟通的艺术 | DavidChenのBlog</title><meta name="robots" content="noindex"><noscript>开启JavaScript才能访问本站哦~</noscript><link rel="icon" href="/davidchene/img/pwa/favicon.png"><!-- index.css--><link rel="stylesheet" href="/davidchene/css/index.css?v=3.0.19"><!-- inject head--><link rel="canonical" href="https://david-chen31.github.io/2025/08/12/%E6%B2%9F%E9%80%9A%E7%9A%84%E8%89%BA%E6%9C%AF/index.html"><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/css/all.min.css"><!-- aplayer--><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css"><!-- swiper--><!-- fancybox ui--><!-- katex--><!-- Open Graph--><meta name="description" content="沟通的艺术前言​ 我在大二这一年，因为和室友之间的矛盾，常常受到内耗影响，精力和时间都慢慢地磨去。暑假期间，我像是被苹果砸了一般，突然想到把ai当成情感师，与ai倾诉并寻求解决途径。这个方式可能很多人早就在使用了，请恕我秒速五厘米的反射弧，但下面的内容也许会对你有帮助 逃避解决不了问题​ 我们跳过具"><!-- pwa--><meta name="apple-mobile-web-app-capable" content="DavidChenのBlog"><meta name="theme-color" content="var(--efu-main)"><meta name="apple-mobile-web-app-status-bar-style" content="var(--efu-main)"><link rel="bookmark" href="/davidchene/img/pwa/favicon.png"><link rel="apple-touch-icon" href="/davidchene/img/pwa/favicon.png" sizes="180x180"><script>console.log(' %c Solitude %c ' + '3.0.19' + ' %c https://github.com/everfu/hexo-theme-solitude',
+    'background:#35495e ; padding: 1px; border-radius: 3px 0 0 3px;  color: #fff',
+    'background:#ff9a9a ; padding: 1px; border-radius: 0 3px 3px 0;  color: #fff',
+    'background:unset ; padding: 1px; border-radius: 0 3px 3px 0;  color: #fff')
+</script><script>(()=>{
+        const saveToLocal = {
+            set: function setWithExpiry(key, value, ttl) {
+                if (ttl === 0)
+                    return
+                const now = new Date()
+                const expiryDay = ttl * 86400000
+                const item = {
+                    value: value,
+                    expiry: now.getTime() + expiryDay
+                }
+                localStorage.setItem(key, JSON.stringify(item))
+            },
+            get: function getWithExpiry(key) {
+                const itemStr = localStorage.getItem(key)
+
+                if (!itemStr) {
+                    return undefined
+                }
+                const item = JSON.parse(itemStr)
+                const now = new Date()
+
+                if (now.getTime() > item.expiry) {
+                    localStorage.removeItem(key)
+                    return undefined
+                }
+                return item.value
+            }
+        };
+        window.utils = {
+            saveToLocal: saveToLocal,
+            getCSS: (url, id = false) => new Promise((resolve, reject) => {
+              const link = document.createElement('link')
+              link.rel = 'stylesheet'
+              link.href = url
+              if (id) link.id = id
+              link.onerror = reject
+              link.onload = link.onreadystatechange = function() {
+                const loadState = this.readyState
+                if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+                link.onload = link.onreadystatechange = null
+                resolve()
+              }
+              document.head.appendChild(link)
+            }),
+            getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+              const script = document.createElement('script')
+              script.src = url
+              script.async = true
+              script.onerror = reject
+              script.onload = script.onreadystatechange = function() {
+                const loadState = this.readyState
+                if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+                script.onload = script.onreadystatechange = null
+                resolve()
+              }
+
+              Object.keys(attr).forEach(key => {
+                script.setAttribute(key, attr[key])
+              })
+
+              document.head.appendChild(script)
+            }),
+            addGlobalFn: (key, fn, name = false, parent = window) => {
+                const globalFn = parent.globalFn || {}
+                const keyObj = globalFn[key] || {}
+
+                if (name && keyObj[name]) return
+
+                name = name || Object.keys(keyObj).length
+                keyObj[name] = fn
+                globalFn[key] = keyObj
+                parent.globalFn = globalFn
+            },
+            addEventListenerPjax: (ele, event, fn, option = false) => {
+              ele.addEventListener(event, fn, option)
+              utils.addGlobalFn('pjax', () => {
+                  ele.removeEventListener(event, fn, option)
+              })
+            },
+            diffDateFormat: (selector) => {
+                selector.forEach(item => {
+                    const date = new Date(item.getAttribute('datetime') || item.textContent);
+                    item.textContent = (date.getMonth() + 1).toString()+'/'+date.getDate().toString();
+                });
+            },
+        }
+    })()</script><!-- theme--><script>initTheme = () => {
+    let isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const cachedMode = utils.saveToLocal.get('theme');
+    if (cachedMode === undefined) {
+        const nowMode =
+            isDarkMode ? 'dark' : 'light'
+        document.documentElement.setAttribute('data-theme', nowMode);
+    } else {
+        document.documentElement.setAttribute('data-theme', cachedMode);
+    }
+    typeof rm === 'object' && rm.mode(cachedMode === 'dark' && isDarkMode)
+}
+initTheme()</script><!-- global head--><script>const GLOBAL_CONFIG = {
+    root: '/davidchene/',
+    algolia: undefined,
+    localsearch: undefined,
+    runtime: '2025-07-20 00:00:00',
+    lazyload: {
+        enable: false,
+        error: '/img/error_load.avif'
+    },
+    copyright: {"limit":50,"author":"作者: David Chen","link":"链接: ","source":"来源: DavidChenのBlog","info":"著作权归作者所有。 商业转载请联系作者获得授权，非商业转载请注明出处。"},
+    highlight: {"limit":200,"expand":true,"copy":true,"syntax":"highlight.js"},
+    randomlink: false,
+    lang: {"theme":{"dark":"已切换至深色模式","light":"已切换至浅色模式"},"copy":{"success":"复制成功","error":"复制失败"},"backtop":"返回顶部","time":{"day":"天前","hour":"小时前","just":"刚刚","min":"分钟前","month":"个月前"},"day":" 天","f12":"开发者模式已打开，请遵循GPL协议。","totalk":"无需删除空行，直接输入评论即可"},
+    aside: {
+        state: {
+            morning: "✨ 早上好，新的一天开始了",
+            noon: "🍲 午餐时间",
+            afternoon: "🌞 下午好",
+            night: "早点休息 🥱",
+            goodnight: "晚安 😴",
+        },
+        witty_words: ["你可以的","你一定可以的","祝你好运，陌生人"],
+        witty_comment: {
+            prefix: '好久不见，',
+            back: '欢迎再次回来，',
+        },
+    },
+    covercolor: {
+        enable: false
+    },
+    comment: false,
+    lightbox: 'null',
+    right_menu: false,
+    translate: {"translateDelay":0,"defaultEncoding":2},
+    lure: false,
+    expire: false,
+};</script><!-- page-config head--><script id="config-diff">var PAGE_CONFIG = {
+    is_post: true,
+    is_page: false,
+    is_home: false,
+    page: '生活',
+    toc: true,
+    comment: false,
+    ai_text: false,
+    color: false,
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body id="body" data-type="生活"><!-- universe--><!-- background img--><!-- loading--><!-- console--><!-- sidebar--><div id="sidebar" style="zoom: 1;"><div id="menu-mask" style="display: none;"></div><div id="sidebar-menus"><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/davidchene/archives/"><div class="headline">文章</div><div class="length-num">6</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/davidchene/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/davidchene/tags/"><div class="headline">标签</div><div class="length-num">5</div></a></div></div></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><span class="darkmode_switchbutton menu-child" onclick="sco.switchDarkMode()"><i class="solitude fas fa-circle-half-stroke"></i><span>显示模式</span></span></div><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">project</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://github.com/everfu/hexo-theme-solitude" title="Solitude"><img class="nolazyload back-menu-item-icon" src="/img/pwa/favicon.ico" alt="Solitude"><span class="back-menu-item-text">Solitude</span></a></div></div></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/davidchene/"><span>首页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>文章</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/davidchene/archives/"><i class="solitude  fas fa-folder-closed"></i><span>归档</span></a></li><li><a class="site-page child" href="/davidchene/categories/"><i class="solitude  fas fa-clone"></i><span>分类</span></a></li><li><a class="site-page child" href="/davidchene/tags/"><i class="solitude  fas fa-tags"></i><span>标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>友链</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/davidchene/moments/"><i class="solitude  fas fa-wifi"></i><span>朋友圈</span></a></li><li><a class="site-page child" href="/davidchene/links/"><i class="solitude  fas fa-user-group"></i><span>友情链接</span></a></li><li><a class="site-page child" href="javascript:travelling()"><i class="solitude  fas fa-gift"></i><span>宝藏博主</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>我的</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/davidchene/about/"><i class="solitude  fas fa-user"></i><span>关于</span></a></li><li><a class="site-page child" href="/davidchene/kit/"><i class="solitude  fas fa-laptop"></i><span>装备</span></a></li><li><a class="site-page child" href="/davidchene/music/"><i class="solitude  fas fa-music"></i><span>音乐馆</span></a></li></ul></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-tags"><div class="card-tag-cloud"><a href="/davidchene/tags/cocos/">cocos<sup>1</sup></a><a href="/davidchene/tags/%E5%8D%9A%E5%AE%A2/">博客<sup>1</sup></a><a href="/davidchene/tags/%E4%BA%91%E9%83%A8%E7%BD%B2/">云部署<sup>1</sup></a><a href="/davidchene/tags/%E5%87%BD%E6%95%B0%E8%AE%A1%E7%AE%97/">函数计算<sup>1</sup></a><a href="/davidchene/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库<sup>1</sup></a></div></div></div></div><!-- keyboard--><!-- righhtside--><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav class="show" id="nav"><div id="nav-group"><div id="blog_name"><div class="back-home-button" tabindex="-1"><i class="back-home-button-icon solitude fas fa-bars-progress"></i><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">project</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://github.com/everfu/hexo-theme-solitude" title="Solitude"><img class="nolazyload back-menu-item-icon" src="/img/pwa/favicon.ico" alt="Solitude"><span class="back-menu-item-text">Solitude</span></a></div></div></div></div><a id="site-name" href="/davidchene/" title="返回博客主页"><span class="title">Solitude</span><i class="solitude fas fa-home"></i></a></div><div id="page-name-mask"><div id="page-name"><a id="page-name-text" onclick="sco.toTop()">沟通的艺术</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/davidchene/"><span>首页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>文章</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/davidchene/archives/"><i class="solitude  fas fa-folder-closed"></i><span>归档</span></a></li><li><a class="site-page child" href="/davidchene/categories/"><i class="solitude  fas fa-clone"></i><span>分类</span></a></li><li><a class="site-page child" href="/davidchene/tags/"><i class="solitude  fas fa-tags"></i><span>标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>友链</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/davidchene/moments/"><i class="solitude  fas fa-wifi"></i><span>朋友圈</span></a></li><li><a class="site-page child" href="/davidchene/links/"><i class="solitude  fas fa-user-group"></i><span>友情链接</span></a></li><li><a class="site-page child" href="javascript:travelling()"><i class="solitude  fas fa-gift"></i><span>宝藏博主</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>我的</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/davidchene/about/"><i class="solitude  fas fa-user"></i><span>关于</span></a></li><li><a class="site-page child" href="/davidchene/kit/"><i class="solitude  fas fa-laptop"></i><span>装备</span></a></li><li><a class="site-page child" href="/davidchene/music/"><i class="solitude  fas fa-music"></i><span>音乐馆</span></a></li></ul></div></div></div><div id="nav-left"></div><div id="nav-right"><div class="nav-button" id="travellings_button"><a class="site-page" target="_blank" rel="noopener" href="https://www.travellings.cn/go.html" title=""><i class="solitude fas fa-train"></i></a></div><div class="nav-button" id="nav-totop" onclick="sco.toTop()"><a class="totopbtn"><i class="solitude fas fa-arrow-up"></i><span id="percent">0</span></a></div><div id="toggle-menu"><a class="site-page"><i class="solitude fas fa-bars"></i></a></div></div></div></nav><div class="coverdiv" id="coverdiv"><img class="nolazyload" id="post-cover" src="/davidchene/img/default.avif" alt="沟通的艺术"></div><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original" title="该文章为原创文章，注意版权协议">原创</a><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/davidchene/tags/%E4%BA%BA%E9%99%85%E4%BA%A4%E5%BE%80/"><span class="tags-name tags-punctuation"><i class="solitude fas fa-hashtag"></i>人际交往</span></a></div></div></div></div><h1 class="post-title">沟通的艺术</h1><div id="post-meta"><div class="meta-secondline"><span class="post-meta-date" title="发布于 2025-08-12 00:10:36"><i class="post-meta-icon solitude fas fa-calendar-days"></i><time datetime="2025-08-11T16:10:36.000Z">2025-08-11T16:10:36.000Z</time></span><span class="post-meta-date" title="最后更新于 2025-08-12 08:29:12"><i class="post-meta-icon solitude fas fa-arrows-rotate"></i><time datetime="2025-08-12T00:29:12.390Z">2025-08-12T00:29:12.390Z</time></span><span class="post-meta-position" title="作者IP归属地为China"><i class="post-meta-icon solitude fas fa-location-dot"></i><span>China</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content article-container"><h1 id="沟通的艺术"><a href="#沟通的艺术" class="headerlink" title="沟通的艺术"></a>沟通的艺术</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>​	我在大二这一年，因为和室友之间的矛盾，常常受到内耗影响，精力和时间都慢慢地磨去。暑假期间，我像是被苹果砸了一般，突然想到把ai当成情感师，与ai倾诉并寻求解决途径。这个方式可能很多人早就在使用了，请恕我秒速五厘米的反射弧，但下面的内容也许会对你有帮助</p>
+<h2 id="逃避解决不了问题"><a href="#逃避解决不了问题" class="headerlink" title="逃避解决不了问题"></a>逃避解决不了问题</h2><p>​	我们跳过具体的矛盾，直接讲方式。起初我采取的方式是有意保持距离，减少摩擦产生的可能性，也能减少我对交往这块的注意力，而我要做的也很简单，少说少走一块。</p>
+<p>​	朴素无华的解决方式，听起来非常good，但他是我的室友，你早上一睁眼就能看到的那种，晚上闭眼前最后一眼不是手机就是他 。这距离保持不了一点啊！🙌</p>
+<h2 id="真诚地表达自己"><a href="#真诚地表达自己" class="headerlink" title="真诚地表达自己"></a>真诚地表达自己</h2><p>​	很感谢今天有这么智能的科技，ai给了我近乎完美的方案–“正视问题，愿意表达真实感受，尝试用理性和温和的方式去解决”。以前的我，总觉得告诉对方“我不舒服”的情感流露是“不成熟”的表现；现在的我，感觉以前的我，是“不成熟”的表现。</p>
+<p>​	沟通能解决很多交往方面的问题，因为你能通过语言引导对方感受自己的立场，提出自己的意见，在两人的选择中选择一个平衡点。但当一方只是闭嘴不言，平衡点就会被破坏，一方受到来自另一方的几乎全部伤害。</p>
+<p>​	比如他喜欢在发消息后，如果对方没及时回，那么他就会给对方打电话，而我不太喜欢电话的打扰的感觉，所以每次他打来时我心里都会有个疙瘩。现在想想，为什么不说出来呢，大胆并理性地表达“有时候我在专心做事情，突然被电话打断，我感觉很不舒服，我理解你担心我没看到消息，但有时我真的需要保持专注的状态，希望你能理解”。如果后续对方仍然不尊重你，你大可对他彻底死心，而实际上大家听到这些理性且温和的建议，都是很清醒的。</p>
+<h2 id="非暴力沟通原则"><a href="#非暴力沟通原则" class="headerlink" title="非暴力沟通原则"></a>非暴力沟通原则</h2><p>​	根据心理学方面的研究，我们要尽可能避免以下几点：</p>
+<ol>
+<li>“归因偏差”：沟通时有明显地因果指向</li>
+<li>“认知负荷”：信息密集且直接，可能引起认知过载，阻碍理性加工</li>
+<li>“负向情绪渲染”：避免用较强的语气，温和的语言能促进对方的亲社会行为和情绪同理</li>
+<li>“命令性语言”：把“希望你不要打电话”换成“希望你能理解”的请求性语言</li>
+</ol>
+<p>​	很好，避免了上述情况，你基本就避免了对方的逆反心理和防御机制，对方也更容易接受你的感受和需求（根据具体情况使用，前提是对方讲理）。</p>
+<h2 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h2><p>​	“真诚沟通”是建立良好人际关系的基础。罗杰斯认为：</p>
+<blockquote>
+<p>“真诚地表达自己，同时尊重他人的感受，是心理健康和关系发展的核心。”</p>
+</blockquote>
+<!-- flag of hidden posts --></article><div class="post-copyright"><div class="post-copyright__author_group"><div class="post-copyright__author_img"><img class="post-copyright__author_img_front" src="/davidchene/img/logo.png"></div><div class="post-copyright__author_name">David Chen</div><div class="post-copyright__author_desc"></div></div><div class="post-tools" id="post-tools"><div class="post-tools-left"><div id="quit-box" onclick="RemoveRewardMask()"></div></div></div><div class="post-copyright__notice"><span class="post-copyright-info">本文是原创文章，采用<a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans">CC BY-NC-SA 4.0</a>协议，完整转载请注明来自<a href="/davidchene/">DavidChenのBlog</a></span></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/davidchene/tags/%E4%BA%BA%E9%99%85%E4%BA%A4%E5%BE%80/"><span class="tags-punctuation"><i class="solitude fas fa-hashtag"></i>人际交往<span class="tagsPageCount">1</span></span></a></div></div></div><nav class="needEndHide pagination-post" id="pagination"></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><div class="top-group"><div class="sayhi" id="sayhi" onclick="sco.changeWittyWord()"></div></div></div><div class="avatar"><img alt="头像" src="https://youke1.picui.cn/s1/2025/08/11/689a10bf174fa.jpg"><div class="sticker"><img class="sticker-img" src="https://s3.qjqq.cn/47/67eb5b00cf179.png!color" alt="心情贴纸"></div></div><div class="description">这是我的博客 / This is my Blog</div><div class="bottom-group"><span class="left"><div class="name">David Chen</div><div class="desc">只有迎风，风筝才能飞得更高。</div></span><div class="social-icons is-center"><a class="social-icon" target="_blank" rel="noopener" href="https://github.com/everfu" title="Github"><i class="solitude  fab fa-github"></i></a><a class="social-icon" target="_blank" rel="noopener" href="https://space.bilibili.com/1329819902" title="Bilibili"><i class="solitude  fab fa-bilibili"></i></a></div></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="solitude fas fa-bars"></i><span>文章目录</span></div><div class="toc-content" id="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B2%9F%E9%80%9A%E7%9A%84%E8%89%BA%E6%9C%AF"><span class="toc-text">沟通的艺术</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%83%E9%81%BF%E8%A7%A3%E5%86%B3%E4%B8%8D%E4%BA%86%E9%97%AE%E9%A2%98"><span class="toc-text">逃避解决不了问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9C%9F%E8%AF%9A%E5%9C%B0%E8%A1%A8%E8%BE%BE%E8%87%AA%E5%B7%B1"><span class="toc-text">真诚地表达自己</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%9E%E6%9A%B4%E5%8A%9B%E6%B2%9F%E9%80%9A%E5%8E%9F%E5%88%99"><span class="toc-text">非暴力沟通原则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E5%B0%BE"><span class="toc-text">结尾</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="solitude fas fa-map"></i><span>最近发布</span></div><div class="aside-list"><a class="aside-list-item" href="/davidchene/2025/08/10/%E5%A6%82%E4%BD%95%E5%9C%A8Jupyter-Notebook%E4%B8%8A%E4%BD%BF%E7%94%A8GPU/" title="如何在Jupyter Notebook上使用GPU"><div class="thumbnail"><img alt="如何在Jupyter Notebook上使用GPU" src="/davidchene/img/default.avif"></div><div class="content"><span class="title" href="/davidchene/2025/08/10/%E5%A6%82%E4%BD%95%E5%9C%A8Jupyter-Notebook%E4%B8%8A%E4%BD%BF%E7%94%A8GPU/" title="如何在Jupyter Notebook上使用GPU">如何在Jupyter Notebook上使用GPU</span></div></a><a class="aside-list-item" href="/davidchene/2025/07/28/%E9%98%BF%E9%87%8C%E4%BA%91%E5%88%9D%E4%BD%93%E9%AA%8C%EF%BC%9A%E4%BB%8E%E5%90%8E%E7%AB%AF%E5%88%B0%E5%89%8D%E7%AB%AF/" title="阿里云初体验：从后端到前端"><div class="thumbnail"><img alt="阿里云初体验：从后端到前端" src="/davidchene/img/default.avif"></div><div class="content"><span class="title" href="/davidchene/2025/07/28/%E9%98%BF%E9%87%8C%E4%BA%91%E5%88%9D%E4%BD%93%E9%AA%8C%EF%BC%9A%E4%BB%8E%E5%90%8E%E7%AB%AF%E5%88%B0%E5%89%8D%E7%AB%AF/" title="阿里云初体验：从后端到前端">阿里云初体验：从后端到前端</span><span class="categories" href="/davidchene/2025/07/28/%E9%98%BF%E9%87%8C%E4%BA%91%E5%88%9D%E4%BD%93%E9%AA%8C%EF%BC%9A%E4%BB%8E%E5%90%8E%E7%AB%AF%E5%88%B0%E5%89%8D%E7%AB%AF/">后端</span></div></a><a class="aside-list-item" href="/davidchene/2025/07/28/%E4%B8%80%E7%AF%87%E6%90%9E%E5%AE%9A%EF%BC%9AHexo%E5%8D%9A%E5%AE%A2%E5%BF%AB%E9%80%9F%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/" title="一篇搞定：Hexo博客快速插入图片"><div class="thumbnail"><img alt="一篇搞定：Hexo博客快速插入图片" src="/davidchene/img/default.avif"></div><div class="content"><span class="title" href="/davidchene/2025/07/28/%E4%B8%80%E7%AF%87%E6%90%9E%E5%AE%9A%EF%BC%9AHexo%E5%8D%9A%E5%AE%A2%E5%BF%AB%E9%80%9F%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/" title="一篇搞定：Hexo博客快速插入图片">一篇搞定：Hexo博客快速插入图片</span><span class="categories" href="/davidchene/2025/07/28/%E4%B8%80%E7%AF%87%E6%90%9E%E5%AE%9A%EF%BC%9AHexo%E5%8D%9A%E5%AE%A2%E5%BF%AB%E9%80%9F%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/">前端</span></div></a><a class="aside-list-item" href="/davidchene/2025/07/26/5min%E9%80%9F%E9%80%9A%EF%BC%9A%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" title="5min速通：个人博客搭建"><div class="thumbnail"><img alt="5min速通：个人博客搭建" src="/davidchene/img/default.avif"></div><div class="content"><span class="title" href="/davidchene/2025/07/26/5min%E9%80%9F%E9%80%9A%EF%BC%9A%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" title="5min速通：个人博客搭建">5min速通：个人博客搭建</span></div></a><a class="aside-list-item" href="/davidchene/2025/07/26/Cocos%E5%B0%8F%E6%B8%B8%E6%88%8F%E5%8F%91%E5%B8%83%E5%88%B0web%E6%95%99%E7%A8%8B%EF%BC%8C%E7%9C%8B%E8%BF%99%E4%B8%80%E7%AF%87%E5%B0%B1%E5%A4%9F%E4%BA%86%EF%BC%81/" title="Cocos小游戏发布到web教程，看这一篇就够了！"><div class="thumbnail"><img alt="Cocos小游戏发布到web教程，看这一篇就够了！" src="/davidchene/img/default.avif"></div><div class="content"><span class="title" href="/davidchene/2025/07/26/Cocos%E5%B0%8F%E6%B8%B8%E6%88%8F%E5%8F%91%E5%B8%83%E5%88%B0web%E6%95%99%E7%A8%8B%EF%BC%8C%E7%9C%8B%E8%BF%99%E4%B8%80%E7%AF%87%E5%B0%B1%E5%A4%9F%E4%BA%86%EF%BC%81/" title="Cocos小游戏发布到web教程，看这一篇就够了！">Cocos小游戏发布到web教程，看这一篇就够了！</span><span class="categories" href="/davidchene/2025/07/26/Cocos%E5%B0%8F%E6%B8%B8%E6%88%8F%E5%8F%91%E5%B8%83%E5%88%B0web%E6%95%99%E7%A8%8B%EF%BC%8C%E7%9C%8B%E8%BF%99%E4%B8%80%E7%AF%87%E5%B0%B1%E5%A4%9F%E4%BA%86%EF%BC%81/">游戏制作</span></div></a></div></div></div></div></main><footer id="footer"><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div class="copyright">© 2025 By&nbsp;<a class="footer-bar-link" href="/davidchene/"><img class="author-avatar" src="/davidchene/img/pwa/favicon.png">David Chen</a></div><div class="beian-group"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://hexo.io/">框架：Hexo</a><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/everfu/hexo-theme-solitude">主题：Solitude</a></div></div></div></div></footer></div><!-- right_menu--><!-- inject body--><div><script src="/davidchene/js/utils.js?v=3.0.19"></script><script src="/davidchene/js/main.js?v=3.0.19"></script><script src="/davidchene/js/third_party/waterfall.min.js?v=3.0.19"></script><script src="https://fastly.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script src="https://fastly.jsdelivr.net/npm/typeit@8.8.7/dist/index.umd.min.js"></script><script src="/davidchene/js/tw_cn.js?v=3.0.19"></script><script src="https://fastly.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.js"></script><script src="/davidchene/js/post_ai.js?v=3.0.19"></script><script>var meting_api = 'https://meting.qjqq.cn/?server=:server&type=:type&id=:id&auth=:auth&r=:r';</script><script src="https://fastly.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script><script src="https://fastly.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js"></script><script>window.paceOptions = {
+  restartOnPushState: false
+}
+
+utils.addGlobalFn('pjaxSend', () => {
+  Pace.restart()
+}, 'pace_restart')
+</script><script src="https://fastly.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><div class="js-pjax"></div></div><!-- pjax--><script>const pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: ["title","#body-wrap","#site-config","meta[name=\"description\"]",".js-pjax","meta[property^=\"og:\"]","#config-diff",".rs_show",".rs_hide"],
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+})
+
+document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+})
+
+document.addEventListener('pjax:complete', () => {
+    window.refreshFn()
+
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+        const newScript = document.createElement('script')
+        const content = item.text || item.textContent || item.innerHTML || ""
+        Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+        newScript.appendChild(document.createTextNode(content))
+        item.parentNode.replaceChild(newScript, item)
+    })
+
+    GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+})
+
+document.addEventListener('pjax:error', (e) => {
+    if (e.request.status === 404) {
+        pjax.loadUrl('/404.html')
+    }
+})</script><!-- google adsense--><!-- search--><!-- music--><div class="needEndHide" id="nav-music"><div id="nav-music-hoverTips"><i class="music-control-btn fas fa-backward-step" id="music-prev" onclick="sco.musicSkipBack()"></i><i class="music-control-btn fas fa-pause" id="music-pause" onclick="sco.musicToggle()"></i><i class="music-control-btn fas fa-play" id="music-play" onclick="sco.musicToggle()"></i><i class="music-control-btn fas fa-forward-step" id="music-next" onclick="sco.musicSkipForward()"></i></div><meting-js id="5144842535" server="netease" type="playlist" mutex="true" preload="none" theme="var(--efu-main)" data-lrctype="0" order="random" volume="0.8"></meting-js></div></body></html>
+        <script>
+            const posts = ["2025/08/10/如何在Jupyter-Notebook上使用GPU/","2025/07/28/阿里云初体验：从后端到前端/","2025/07/28/一篇搞定：Hexo博客快速插入图片/","2025/07/26/5min速通：个人博客搭建/","2025/07/26/Cocos小游戏发布到web教程，看这一篇就够了！/","2025/07/26/hello-world/"];
+            function toRandomPost() {
+                const randomPost = posts[Math.floor(Math.random() * posts.length)];
+                pjax.loadUrl(GLOBAL_CONFIG.root + randomPost);
+            }
+        </script>
